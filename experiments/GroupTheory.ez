@@ -1,0 +1,37 @@
+(*
+    Thing
+    Thing can be an element (a thing that doesn't contain other things)
+    Thing can be a group (a thing that does contain other things)
+    Group with 0 elements is Nothing
+    Group with 1 element is Something
+    Group with 2 elements is Function (Something from Something)
+    The element / group distinction depends on the task
+        In a battle, people are elements
+        In a hospital, people are groups (of organs)
+    (Element Atom)
+    (Group Molecule)
+    ((Element Atom) (Group Molecule))
+    (False (Element Atom))
+    (True (Group Molecule))
+    + (Nat 1)
+    + (Nat 2)
+    - (1 2)
+    Nat ~ zero
+    Nat ~ next
+    Nat ~ (next ~ zero)
+    next ~ (next ~ next)
+    zero ! next
+    Nat
+
+    (0 zero)
+    (1 (next zero))
+    (2 (next (next zero)))
+    (3 (next (next (next zero))))
+    (3 (next (next (next (next zero)))))
+    (3 (+ (1 2)))
+    (4 (+ (1 2)))
+    (Nat +)
+    ((+ (a b)) ())
+
+    (* Must not have contradicting links *)
+*)

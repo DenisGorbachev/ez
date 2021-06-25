@@ -1,0 +1,4 @@
+(*
+ * Function is causal relationship ("a path from X to Y")
+ * Type is expected relationship ("a list of paths to Y")
+ *)

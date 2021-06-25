@@ -1,0 +1,50 @@
+(* # Overview *)
+
+EZ is ProgrammingLanguage
+EZ must be EasyToRead
+EZ must be EasyToWrite
+EZ must be ProducingProofs (* that your program is correct *)
+
+ProgrammingLanguage is record
+    Name is string
+    Compiler is Compiler
+
+Compiler is Program
+
+Program is list of byte
+
+Filesystem.Path is type
+
+(* EZ must allow using JavaScript libraries *)
+(* EZ must compile to JavaScript or Python *)
+(* EZ must allow coding from top to bottom *)
+(* EZ must allow partial definitions *)
+
+EZ has Comments (in brackets)
+EZ has (a small number of) Keywords
+
+Keywords is list
+Keywords =
+    is
+    has
+    must
+    where
+    loop
+    if
+    of
+
+Article is record where
+    Title is string
+    Text is ArticleText
+
+ArticleExamples is list of Article
+ArticleExamples =
+    Article where
+        Title = "My title"
+        Text = ArticleText where
+
+    Article where
+
+
+ArticleText is record where
+

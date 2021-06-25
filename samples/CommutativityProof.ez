@@ -1,0 +1,37 @@
+(* Program to prove commutativity of Sum *)
+
+Nat is type
+Nat has constructors
+    Zero
+    Next
+
+Zero is method
+Zero has outputs
+    Output is Nat
+
+Next is method
+Next has inputs
+    Input is Nat
+Next has outputs
+    Output is Nat
+
+Sum is method
+Sum has inputs
+    A is Nat
+    B is Nat
+Sum has outputs
+    Output is Nat
+Sum has operations
+    if constructor of A matches Zero
+        Output = A
+    if constructor of A matches Next of Previous
+        Output = Next of Sum where
+            A = Previous
+            B = B
+
+CommutativeSumProof is method
+CommutativeSumProof has inputs
+    A is Nat
+    B is Nat
+CommutativeSumProof has outputs
+    Output is Proof of Sum of A, B == Sum of B, A

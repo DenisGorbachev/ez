@@ -1,0 +1,38 @@
+(* How to live *)
+
+run Main on Start
+
+Main is method
+Main has operations
+    Complete RewardingTasks
+    Complete OptimizingTasks (* that reduce time for completing RewardingTasks *)
+    (* Solve obviously rewarding problems *)
+    (* Solve problems that you've encountered while solving obviously rewarding problems *)
+    (* If a problem doesn't have an obvious solution, ask experts or users *)
+    with Tasks
+        RecallTasksFromMemory
+        Sort where
+            Criterion = Reward of it
+        Filter where
+            Criterion = MostLikely where Task = it
+
+Execute is prototype of method
+Execute has inputs
+    Task is operations
+Execute has outputs
+    Results is results of operations
+    Ideas is ideas of operations
+
+RecallTasksFromMemory is prototype of method
+RecallTasksFromMemory has outputs
+    Tasks is list of operations
+
+task is record where
+    Operations is operations
+    Reward is number
+    Probability is probability
+
+probability is type of number
+probability has constraints
+    it >= 0
+    it <= 1

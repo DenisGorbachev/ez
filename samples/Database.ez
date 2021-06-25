@@ -1,0 +1,71 @@
+(* Program - unfinished - that implements a database of students *)
+
+import Console
+
+Program is method
+Program has inputs
+    Query is string
+Program has effects
+    PrintLine is Console.PrintLine
+Program has operations
+    QueryTokens = Tokens where
+        String = Query
+        Delimeter = " "
+    QueryType = first of QueryTokens
+    QueryTokensRest = rest of QueryTokens
+    if QueryType equals "SELECT"
+        PrintLine for each of SelectResults of SelectQuery of QueryTokensRest
+    if QueryType equals "INSERT"
+        PrintLine of InsertResult of InsertQuery of QueryTokensRest
+    if QueryType equals "UPDATE"
+        PrintLine of UpdateResult of UpdateQuery of QueryTokensRest
+
+InsertQuery is method
+InsertQuery has inputs
+    QueryTokensRest is list of string
+InsertQuery has outputs
+    TableName is string
+    Conditions is list of condition
+InsertQuery has operations
+    Tokens = Iterator of QueryTokensRest
+    TableName = Next of Tokens
+    Where = Next of Tokens
+    Where must equal "WHERE"
+    loop
+        Field = Next of Tokens
+        Operator = Next of Tokens
+        Value = Next of Tokens
+        Conditions contains (Field, Operator, Value)
+        if not More of Tokens
+            break
+
+InsertResult is method
+InsertResult has inputs
+    QueryTokensRest is list of string
+InsertResult has outputs
+    Results is list of string
+(InsertResult has operations)
+
+condition is type
+condition = tuple where
+    Type = string
+    Size = 3 (size of tuple, not size of string)
+
+OkErrString is type
+OkErrString has constructors
+    Ok
+    Err
+
+Ok is method of OkErrString
+Ok has inputs
+    Input is string
+Ok has outputs
+    Output is OkErrString
+(Ok has no operations - it's a type constructor)
+
+Err is method of OkErrString
+Err has inputs
+    Input is string
+Err has outputs
+    Output is OkErrString
+(Err has no operations - it's a type constructor)

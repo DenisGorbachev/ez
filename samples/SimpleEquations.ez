@@ -1,22 +1,24 @@
 (* Program that outputs the user name *)
 
-Program has operations
-    Name = First of Arguments
+Program operations =
+    Name = Arguments First
     Output = "Hello {{Name}}!"
 
 (* Program that calculates the factorial *)
 
-Factorial is method
-Factorial has inputs
-    Input is Number
-Factorial has outputs
-    Output is Number
-Factorial has tests
+Factorial type = method
+Factorial inputs =
+    Input type = Number
+Factorial outputs =
+    Output type = Number
+Factorial tests =
     Test where
-        Actual = Factorial of 1
+        Actual = Factorial where
+            Input = 1
         Expected = 1
     Test where
-        Actual = Factorial of 10
+        Actual = Factorial where
+            Input = 10
         Expected = 3628800
 Factorial has operations
     if
@@ -24,7 +26,8 @@ Factorial has operations
     then
         Output = 1
     else
-        Output = Input * Factorial where
+        Output = Input * Next
+        Next = Factorial where
             Input = Input - 1
 
 

@@ -1,0 +1,13 @@
+MarkAbsentTeams is task
+MarkAbsentTeams has operations
+    Teams = CodaTable of https://coda.io/d/Marketing_dYA-EvnTjpg/Absent-teams_suqc4
+    for Team in Teams
+        TeamIsAbandoned = AbandonedStatus of Team
+        if TeamIsAbandoned
+            SetCell where
+                Row = Team
+                ColumnName = "TG Absent"
+                Value = True
+
+AbandonedStatus is method of executor
+SetCell is method of executor

@@ -1,3 +1,5 @@
+(* EQ is a declarative language that built on "=" operator *)
+
 (* Program that outputs the user name *)
 
 Program operations =

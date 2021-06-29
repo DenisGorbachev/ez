@@ -22,8 +22,9 @@ ValidateDance has operations
         Similarities = GetSimilarities of MusicalMovement.Attributes, PhysicalMovement.Attributes
         Differences = GetDifferences of MusicalMovement.Attributes, PhysicalMovement.Attributes
         All = Concatenate Differences, Similarities
+        CountNominal = (Count of All)
         ScoreNominal = (Count of Similarities) - (Count of Differences)
-        ScoreOverall = Score / (Count of All)
+        ScoreOverall = ScoreNominal / CountNominal
         if ScoreOverall < 0.5 then
             Errors = Stream.Add of Errors, "Physical movement didn't match musical movement"
 

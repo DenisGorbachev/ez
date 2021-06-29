@@ -1,0 +1,5 @@
+run Main on Start
+
+Main is method
+Main has operations
+    InitializeKnowledgeBase

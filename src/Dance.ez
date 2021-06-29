@@ -1,0 +1,51 @@
+CreateDance is function
+CreateDance has inputs
+    Music is Stream of MusicalMovement
+CreateDance has outputs
+    Dance is Stream of PhysicalMovement
+CreateDance has examples
+    Example of https://www.youtube.com/watch?v=aE1uqcACnH4
+    Example of https://www.youtube.com/watch?v=iEswXzy0VR8
+    Example of https://www.youtube.com/watch?v=czoYt0Dd_bQ
+    Example of https://www.youtube.com/watch?v=dm_TzKprOls
+    Example of https://www.youtube.com/watch?v=8FBbFEUYsIM
+    Example of https://www.youtube.com/watch?v=AtTr0GJco8s
+
+ValidateDance is function
+ValidateDance has inputs
+    Music is Stream of MusicalMovement
+    Dance is Stream of PhysicalMovement
+ValidateDance has outputs
+    Errors is Stream of Error
+ValidateDance has operations
+    for MusicalMovement in Music
+        Similarities = GetSimilarities of MusicalMovement.Attributes, PhysicalMovement.Attributes
+        Differences = GetDifferences of MusicalMovement.Attributes, PhysicalMovement.Attributes
+        All = Concatenate Differences, Similarities
+        ScoreNominal = (Count of Similarities) - (Count of Differences)
+        ScoreOverall = Score / (Count of All)
+        if ScoreOverall < 0.5 then
+            Errors = Stream.Add of Errors, "Physical movement didn't match musical movement"
+
+MusicalMovement is record where
+    From is Timestamp
+    To is Timestamp
+    Attributes is List of Attribute
+
+PhysicalMovement is record where
+    From is Timestamp
+    To is Timestamp
+    Attributes is List of Attribute
+
+Timestamp is alias of Number (* Timestamp is a point on time axis *)
+
+Attribute is type
+Attribute has constructors
+    Long
+    Short
+    Strong
+    Weak
+    Happy
+    Sad
+    Giving
+    Taking

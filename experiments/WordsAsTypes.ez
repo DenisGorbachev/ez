@@ -1,0 +1,19 @@
+(*
+    Problem: variable names clash with type names. In a natural language, we may use "a number" for a generic number and "the number x" for a specific number
+    Solution hypothesis: use type names as variable names
+    Solution hypothesis test result: false, because:
+        Sum: Nat -> Nat
+        Mul: Nat -> Nat
+        # Need to store sum result in a variable whose name is not a type
+
+    Solution hypothesis: Embed type name in a variable name
+        A:Product
+*)
+
+Program is method
+Program input is Arguments
+Program output is nil
+Program operations are
+    A = Arguments -> First
+    B = Arguments -> Second
+    Result1 = A -> B -> Sum

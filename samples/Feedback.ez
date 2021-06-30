@@ -1,0 +1,19 @@
+ImproveProduct is method
+ImproveProduct has inputs
+    OldProduct is #Product
+ImproveProduct has outputs
+    NewProduct is #Product
+ImproveProduct has operations
+    OldFeedback = FeedbackFromProduct where Product = OldProduct
+    OldChanges = ChangesFromFeedback where Feedback = OldFeedback
+    NewProduct = ApplyChanges where
+        Product = OldProduct
+        Changes = OldChanges
+
+FeedbackFromProduct is method
+FeedbackFromProduct has inputs
+    Product is #Product
+    People is List of Person
+FeedbackFromProduct has outputs
+    Feedback
+FeedbackFromProduct has undefined operations

@@ -1,0 +1,13 @@
+(* Incomplete *)
+
+GetQuotes is function
+GetQuotes has inputs
+    Portfolio is List of Token
+GetQuotes has outputs
+    Table is record where
+        Headers is List of String
+        Rows is List of List
+GetQuotes has operations
+    Table.Headers = ()
+    for PToken in Portfolio
+        Quote = GetQuote of PToken

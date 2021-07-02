@@ -14,3 +14,32 @@ define
         if (lte input 2)
         -- Unfinished
     )
+
+(* Is is possible to make an easier-to-understand Lisp by adding variable names *)
+
+set
+    name = factorial
+    inputs =
+        (
+            name = input
+            type = Number
+        )
+    outputs =
+        (
+            name = output
+            type = Number
+        )
+    operations =
+        set
+            name = output
+            value = if
+                cond = lte input 0
+                then = 1
+                else = mul input (
+                    factorial
+                        input = input - 1
+                )
+
+check
+    actual = factorial 10
+    expected = 3628800

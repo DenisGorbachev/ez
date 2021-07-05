@@ -1,0 +1,56 @@
+ExpandDoc where
+    OldDoc = https://github.com/ShieldFinanceHQ/contracts/blob/dev/Market-Crash-Protection.md
+
+ExpandDoc is function
+ExpandDoc has inputs
+    Doc is $URL
+ExpandDoc has outputs
+    Doc is $URL
+ExpandDoc has operations
+    for FeedbackGroup in FeedbackGroups
+        for Username in FeedbackGroup
+            Questions = Ask Username "What questions do you have after reading ${Doc}?"
+            Answers = WriteAnswers Questions
+            Doc = AddAnswers Doc Answers
+
+FeedbackGroups is List of $FeedbackGroup
+FeedbackGroups =
+    Employees
+    Supporters
+    Agents
+    Influencers
+    Funds
+
+Employees is $FeedbackGroup
+Employees has elements
+    @Neroll
+    @winooze
+
+Supporters is $FeedbackGroup
+Supporters has elements
+    @v_falcha
+    @TijanCRYP
+    @shilika3
+
+Influencers is $FeedbackGroup
+Influencers = GetInfluencerUsernames where Source = CodaURL
+
+Agents is $FeedbackGroup
+Agents = GetUsernamesFromTelegramGroupURL where TelegramGroupURL = "https://t.me/joinchat/9hKuxYwYRBQ4MTgy"
+
+Funds is $FeedbackGroup
+Funds = [] (* Empty list for now, fill later *)
+
+GetInfluencerUsernames is function (* innate *)
+GetInfluencerUsernames has inputs
+    Source is URL
+GetInfluencerUsernames has outputs
+    Usernames is List of TelegramUsername
+
+WriteAnswers is function (* innate *)
+
+AddAnswersToDoc is function (* innate *)
+
+$FeedbackGroup is alias of List of $TelegramUsername
+
+$TelegramUsername is string

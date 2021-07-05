@@ -1,5 +1,5 @@
 ExpandDoc where
-    OldDoc = https://github.com/ShieldFinanceHQ/contracts/blob/dev/Market-Crash-Protection.md
+    Doc = https://github.com/ShieldFinanceHQ/contracts/blob/dev/Market-Crash-Protection.md
 
 ExpandDoc is function
 ExpandDoc has inputs

@@ -1,6 +1,7 @@
 (* Program that outputs the user name *)
 
-Program has operations
+Run is method
+Run has operations
     Name = First of Arguments
     Output = "Hello {{Name}}!"
 

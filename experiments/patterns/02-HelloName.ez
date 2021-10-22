@@ -1,0 +1,3 @@
+import basic (input output)
+
+input (_program _username ...) = output (Hello _username!)

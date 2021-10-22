@@ -1,10 +1,3 @@
-# terms are names for morphisms, not names for objects
-
-## Hello world
-import basic (input output)
-
-input (...) = output (Hello world!)
-
 ## Summator
 
 input (_name _a _b) = output (sum _a _b)
@@ -34,7 +27,7 @@ sum zero zero = zero
 sum (next _) zero = (next _)
 sum (next _a) (next _b) = sum (next (next _a)) (_b)
 
-## Prove that lengthgth of concatenation of two lists is equal to sum of lengthgths of lists
+## Prove that length of concatenation of two lists is equal to sum of lengths of lists
 
 length () = zero
 length (_first ...rest) = next (length (...rest))
@@ -73,4 +66,4 @@ db = connect (
 )
 
 # - db module -
-# insert is a built-in function provided by driver (input: tree of strings, output: effects + )
+# insert is a built-in function provided by driver (input: tree of strings, output: tree of strings describing effects)

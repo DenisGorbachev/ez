@@ -1,0 +1,5 @@
+import basic (input output)
+
+input (program arg1 arg2) -> output (Hi!)
+input (program ...) -> output (Hello from program!)
+input (...) -> output (Hello world!)

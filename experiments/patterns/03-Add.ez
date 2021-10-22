@@ -1,0 +1,14 @@
+import basic (input output)
+
+input (_program _a _b) = output (sum _a _b)
+
+sum zero _b -> _b
+sum (next _) _b -> sum _ (next _b)
+
+0 = (zero)
+1 = (next 0)
+2 = (next 1)
+3 = (next 2)
+
+2 == next (next 0)
+2 == next (next (zero))
